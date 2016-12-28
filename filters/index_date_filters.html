@@ -1,0 +1,27 @@
+<html>
+
+<head>
+  <script src="angular.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+<div ng-app="myApp">
+  <div ng-controller="Ctrl">
+    <!--date filter-->
+    <p>{{ data.unix | date }}</p>
+    <p>{{ data.iso | date }}</p>
+    <p>{{ data.date | date}}</p>
+
+    <!--date filter is highly customizable-->
+    <p>{{ data.unix | date : "EEEE 'at' H:mma" }}</p>
+    <p>{{ data.iso | date : "longDate"}}</p>
+    <p>{{ data.date | date : "M/d H:m:s.sss"}}</p>
+
+    <a href="https://docs.angularjs.org/api/ng/filter/date">See all date formatting with angularjs's date filter</a>
+
+  </div>
+</div>
+</body>
+
+</html>

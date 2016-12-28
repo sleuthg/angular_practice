@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <script src="angular.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+<div ng-app="myApp">
+  <div ng-controller="Ctrl">
+    <!--uppercase filter-->
+    <p>{{ data.text | uppercase }}</p>
+    <p>{{ data.nums | uppercase }}</p>
+    <p>{{ data.specialChars | uppercase}}</p>
+    <p>_{{ data.whitespace| uppercase}}_</p>
+
+    <!--lowercase filter-->
+    <p>{{ data.text | lowercase }}</p>
+    <p>{{ data.nums | lowercase }}</p>
+    <p>{{ data.specialChars | lowercase}}</p>
+    <p>_{{ data.whitespace| lowercase}}_</p>
+
+    <!--number filter-->
+    <p>{{ data.bignum | number }}</p>
+    <p>{{ data.num | number }}</p>
+    <p>{{ data.smallnum | number }}</p>
+    <p>{{ data.tinynum | number }}</p>
+
+    <!-- data | number : fractionSize(optional)-->
+    <!--fractionSize is an optional paramter-->
+    <p>{{ data.smallnum | number : 4 }}</p>
+    <p>{{ data.tinynum | number : 7}}</p>
+    <p>{{012345.6789 | number : 2}}</p>
+
+    <!-- data | currency : symbol (optional)-->
+    <p>{{ data.smallnum | currency }}</p>
+    <p>{{ data.tinynum | currency}}</p>
+    <!--&#8364 is the ASCII symbol for British pound-->
+    <p>{{012345.6789 | currency : "&#8364"}}</p>
+
+  </div>
+</div>
+</body>
+
+</html>

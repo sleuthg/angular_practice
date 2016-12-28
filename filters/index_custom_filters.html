@@ -1,0 +1,22 @@
+<html>
+
+<head>
+  <script src="angular.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+<div ng-app="myApp">
+  <div ng-controller="Ctrl">
+    <!--date filter-->
+    <p>{{ data.text | reverseFilter }}</p>
+    <p>{{ data.text | reverseFilter : true}}</p>
+    <p>{{ data.nums | reverseFilter}}</p>
+
+    <a href="https://docs.angularjs.org/guide/filter">See documentation on angular filter</a>
+
+  </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <script src="angular.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+<div ng-app="myApp">
+  <div ng-controller="Ctrl">
+    <!--injected filter-->
+    <!--Because arrays are filtered during EVERY digest, it's better to control the filtering -->
+    <!--However, filters on standard data are normally only executed when data is updated, so it remains performant to keep the filter in the template -->
+    <p>{{ data.strArray }}</p>
+    <p>{{ filteredData.strArray}}</p>
+
+    <ul>
+      <li ng-repeat="str in data.strArray">{{str}}</li>
+    </ul>
+
+    <ul>
+      <li ng-repeat="str in filteredData.strArray">{{str}}</li>
+    </ul>
+
+    <p>{{filteredData.text}}</p>
+
+    <a href="https://docs.angularjs.org/guide/filter">See documentation on angular filter</a>
+
+    <div>
+      <p>See your text written in reverse:</p>
+      <input type="text" ng-model="userString" name="userString" title="userString">
+      <p>{{userString | reverseFilt}}</p>
+    </div>
+
+    <div>
+      <p>Put a minimum age on the list of super heros:</p>
+      <input type="text" ng-model="shAge" name="shAge" title="shAge">
+      <ul>
+        <!--This is pretty cool, it automatically does the filtering using the custom filter and its argument which is binded to the user input-->
+        <li ng-repeat="SH in superHeros | shFilter : shAge">{{SH.name}}</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+</body>
+
+</html>
