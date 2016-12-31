@@ -27,22 +27,22 @@ angular.module('myApp', [])
     $scope.superHeros = [
       {
         name: 'Super Man',
-        age: '30',
+        age: 30,
         alterEgo: 'Clark Kent'
       },
       {
         name: 'Batman',
-        age: '43',
+        age: 43,
         alterEgo: 'Bruce Wayne'
       },
       {
         name: 'Spider Man',
-        age: '17',
+        age: 17,
         alterEgo: 'Peter Parker'
       },
       {
         name: 'Hulk',
-        age: '39',
+        age: 39,
         alterEgo: 'Bruce Banner'
       }
     ];
@@ -67,7 +67,6 @@ angular.module('myApp', [])
     return function(input, age) {
       if (age === undefined) {age = 0;}
       return input.filter(function(el) {
-        console.log(el.age);
         return el.age > age;
       });
     }
